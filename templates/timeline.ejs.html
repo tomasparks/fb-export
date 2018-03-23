@@ -60,7 +60,7 @@
 
 			<div class='post__meta'>
 
-				<span class='post__timestamp'><%= new Date(post.created_time).toLocaleDateString() %></span>			
+				<span class="post__timestamp dt-published"><%= new Date(post.created_time).toLocaleDateString() %></span>			
 
 				<ul class='post__reactions'>
 					<li class='post__reaction post__reaction--likes'><%= (post.reactions || post.likes || { data: [] }).data.length %> reactions</li>
@@ -76,12 +76,12 @@
 					<div class='post__comment-meta'> 
 						<strong class='post__comment-author'><%= comment.from ? comment.from.name : '' %></strong> 
 
-						<em class='post__comment-timestamp'>
+						<em class="post__comment-timestamp dt-published">
 							<%= comment.created_time %>
 						</em>
 					</div>
 
-					<div class='post__comment-body'>
+					<div class="post__comment-body e-content">
 						<%= comment.message %>
 					</div>
 
@@ -97,7 +97,7 @@
 								</em>
 							</div>
 
-							<div class='post__reply-body'>
+							<div class="post__reply-body e-content">
 								<%= reply.message %>
 							</div>
 						</div>

@@ -1,4 +1,4 @@
-# fb-export
+# fb-export indieweb edition
 
 Export (most) of your Facebook data using Node.js and the Graph API.
 
