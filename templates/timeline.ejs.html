@@ -7,10 +7,10 @@
 		<%- style %>
 	</style>
 </head>
-<body>
+<body class="h-feed" >
 	<% posts.forEach(function(post) {%> 
-		<div class='post'>
-			<div class='post__message'>
+		<div class="post h-entry">
+			<div class="post__message e-content">
 				<%- (post.message || '').replace(/\n/, '<br>') %>	
 			</div>
 
@@ -35,7 +35,7 @@
 					<% } %>
 
 					<% if (attachment.type === 'photo') {%>
-					<img src="../photos/<%=attachment.target.id%>.jpg"/>
+					<img class="u-photo" src="../photos/<%=attachment.target.id%>.jpg"/>
 					<%}%>
 
 					<% if (attachment.type === 'event') {%>
@@ -46,13 +46,13 @@
 						<h3><%= attachment.title %></h3>
 						<div class='post__subattachments'>
 							<% attachment.subattachments.data.forEach(function(subatt) {%>
-							<img src='../photos/<%=subatt.target.id%>.jpg'/>
+							<img class="u-photo" src='../photos/<%=subatt.target.id%>.jpg'/>
 							<%})%>
 						</div>
 					<% } %>
 
 					<% if (attachment.type === 'profile_media' || attachment.type === 'cover_photo') {%>
-					<img src="../photos/<%=post.id%>.jpg"/>
+					<img class="u-photo" src="../photos/<%=post.id%>.jpg"/>
 					<%}%>
 				</div>
 			<%})%>
